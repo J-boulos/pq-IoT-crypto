@@ -1,0 +1,2 @@
+# Using -isyste instead of -I to avoid warnings about these headers
+INCLUDES += -isystem$(PKGDIRBASE)/tinycrypt/lib/include

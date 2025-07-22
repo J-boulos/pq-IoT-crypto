@@ -1,0 +1,20 @@
+APPLICATION = uart_echo_riot
+
+BOARD ?= nrf52840dk
+
+PROJECT_BASE ?= $(CURDIR)/../..
+RIOTBASE ?= $(CURDIR)/../../RIOT
+
+EXTERNAL_MODULE_DIRS += $(PROJECT_BASE)/modules
+EXTERNAL_PKG_DIRS += $(PROJECT_BASE)/modules
+
+INCLUDES += -I$(PROJECT_BASE)/modules/ml-kem-512/include
+
+MAIN_THREAD_SIZE = THREAD_STACKSIZE_DEFAULT+120000
+
+CFLAGS += -DTHREAD_STACKSIZE_MAIN=$(MAIN_THREAD_SIZE)
+CFLAGS += -Wno-unused-parameter
+
+USEMODULE += pq-IoT-comms
+
+include $(RIOTBASE)/Makefile.include

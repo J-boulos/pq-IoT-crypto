@@ -1,0 +1,6 @@
+ifneq (,$(filter pq-IoT-comms,$(USEMODULE)))
+  FEATURES_REQUIRED += periph_uart
+  USEMODULE += ml-kem-512                        
+  USEMODULE += ml-dsa-44
+  USEMODULE += crypto
+endif

@@ -1,0 +1,4 @@
+ifneq (,$(filter ml-kem-512,$(USEMODULE)))
+  USEMODULE += kem-dsa-common
+  USEMODULE += random
+endif
